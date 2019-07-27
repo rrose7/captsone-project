@@ -2,9 +2,8 @@ package com.vastika.training.capstone.suchanaapi.controllers;
 
 
 import com.vastika.training.capstone.suchanaapi.models.Tags;
-import com.vastika.training.capstone.suchanaapi.repositories.TagsRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.vastika.training.capstone.suchanaapi.services.TagsService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,22 +11,22 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
-public class TagController {
-    private static final Logger log = LoggerFactory.getLogger(TagController.class);
+public class TagsController {
     @Autowired
-    private TagsRepository tagsRepository;
+    private TagsService tagsService;
 
 
     @RequestMapping("/tags")
     public ResponseEntity<List<Tags>> getTags() {
-        List<Tags> tags = this.tagsRepository.findAll();
+        List<Tags> tags = this.tagsService.findAll();
         return new ResponseEntity<>(tags, HttpStatus.OK); // 200
     }
 
     @RequestMapping("/tags/{id}")
     public ResponseEntity<Tags> getTag(@PathVariable("id") int id) {
-        Tags tags = this.tagsRepository.getOne(id);
+        Tags tags = this.tagsService.findById(id);
         log.info("Tag found with id: {}, {}", id, tags);
         return new ResponseEntity<>(tags, HttpStatus.OK);
     }
@@ -35,18 +34,14 @@ public class TagController {
     @RequestMapping(value = "/tags", method = RequestMethod.POST)
     public ResponseEntity<Tags> createTag(@RequestBody Tags tags) {
         log.info("CreateTag() -> {}", tags);
-        Tags saved = this.tagsRepository.save(tags);
+        Tags saved = this.tagsService.CreateTag(tags);
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "/tags/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<HttpStatus> deleteTag(@PathVariable("id") int id) {
         log.info("DeleteTag() -> {}", id);
-        boolean exists = this.tagsRepository.existsById(id);
-        if (!exists) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        this.tagsRepository.deleteById(id);
+        this.tagsService.deleteTag(id);
         return new ResponseEntity<>(HttpStatus.OK);
 
 
@@ -55,11 +50,8 @@ public class TagController {
     @RequestMapping(value = "/tags/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Tags> updateTag(@RequestBody Tags tags, @PathVariable("id") int id) {
         log.info("updateTag()-> {}", id);
-        boolean exists = this.tagsRepository.existsById(id);
-        if (!exists) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        this.tagsRepository.save(tags);
-        return new ResponseEntity<>(HttpStatus.OK);
+        tags.setTagId(id);
+        Tags updated = this.tagsService.updateTag(tags);
+        return new ResponseEntity<>(updated, HttpStatus.OK);
     }
 }

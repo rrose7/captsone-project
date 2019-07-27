@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2c60662-c70f-4f9e-b807-f53de882f98f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Tags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/resources/data.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,21 +35,12 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/ArticleController.java">
+        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            <state relative-caret-position="-85">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,22 +49,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/CategoryController.java">
+        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/AuthorServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="955">
-              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+            <state relative-caret-position="496">
+              <caret line="54" column="60" lean-forward="true" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,10 +61,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/resources/data.sql">
+        <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/TagsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="58" lean-forward="true" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+            <state relative-caret-position="-50">
+              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,15 +95,26 @@
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/TagsRepository.java" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/CategoryRepository.java" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Article.java" />
-        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Category.java" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Tags.java" />
-        <option value="$PROJECT_DIR$/suchana-api/src/main/resources/data.sql" />
-        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/CategoryController.java" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/ArticleController.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/ApiError.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/ErrorResponse.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/exceptions/handler/GlobalExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/exceptions/SuchanaApiException.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/AuthorService.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/AuthorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/resources/data.sql" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java" />
         <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagController.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/SuchanaApiApplication.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/TagsService.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagsController.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/TagsServicesImpl.java" />
+        <option value="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/TagsServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -145,6 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -196,6 +189,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="suchanaapi" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="captsone-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="captsone-project" type="462c0819:PsiDirectoryNode" />
+              <item name="suchana-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="suchanaapi" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="captsone-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="captsone-project" type="462c0819:PsiDirectoryNode" />
+              <item name="suchana-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="suchanaapi" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -214,13 +227,33 @@
               <item name="suchana-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="suchanaapi" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="captsone-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="captsone-project" type="462c0819:PsiDirectoryNode" />
+              <item name="suchana-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="suchanaapi" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="captsone-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="captsone-project" type="462c0819:PsiDirectoryNode" />
+              <item name="suchana-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,6 +266,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RunDashboard">
@@ -275,18 +312,23 @@
       <updated>1563933889908</updated>
       <workItem from="1563933893142" duration="3629000" />
       <workItem from="1563994722594" duration="1469000" />
-      <workItem from="1564019606285" duration="8317000" />
+      <workItem from="1564019606285" duration="9634000" />
+      <workItem from="1564173355694" duration="608000" />
+      <workItem from="1564246337318" duration="8038000" />
+      <workItem from="1564254530150" duration="1763000" />
+      <workItem from="1564256318596" duration="33000" />
+      <workItem from="1564256367684" duration="3974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13415000" />
+    <option name="totallyTimeSpent" value="29148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31417003" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34251013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -296,19 +338,20 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27531084" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49878544" visible="true" weight="0.36944938" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50121456" side_tool="true" weight="0.4831261" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -350,16 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/ArticleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/AuthorRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -370,40 +403,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Article.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/suchana-api/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="44" selection-start-column="44" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Tags.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -427,24 +430,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/SuchanaApiApplication.java">
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Article.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="153">
+          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/ArticleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
+        <state relative-caret-position="170">
           <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services.java" />
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/exceptions/handler.java" />
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/exceptions/handler/GlobalExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/ArticleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="73" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/resources/data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="58" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="154">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://SPRING/mappedClass=com.vastika.training.capstone.suchanaapi.SuchanaApiApplication" />
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/SuchanaApiApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -461,26 +513,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagController.java">
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="955">
-          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+        <state relative-caret-position="-34">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/resources/data.sql">
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/ApiError.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="58" lean-forward="true" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+        <state relative-caret-position="102">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/ErrorResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/exceptions/SuchanaApiException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/TagsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/AuthorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Tags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/AuthorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="54" column="60" lean-forward="true" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/TagsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/TagsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring|suchana-api</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>

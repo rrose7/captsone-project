@@ -4,6 +4,7 @@ package com.vastika.training.capstone.suchanaapi.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -16,11 +17,12 @@ public class Author {
     private int id;
     private String firstName;
     private String lastName;
+    private LocalDate dateCreated;
 
     @OneToMany
     private List<Article> articles;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "author_category",
             joinColumns = @JoinColumn(name = "author_id"),
