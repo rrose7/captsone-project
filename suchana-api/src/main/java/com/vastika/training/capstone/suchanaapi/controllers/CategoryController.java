@@ -1,65 +1,60 @@
 package com.vastika.training.capstone.suchanaapi.controllers;
 
 
+import com.vastika.training.capstone.suchanaapi.exceptions.handler.SuchanaDataException;
 import com.vastika.training.capstone.suchanaapi.models.Category;
-import com.vastika.training.capstone.suchanaapi.repositories.CategoryRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.vastika.training.capstone.suchanaapi.services.CategoryService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
-
+@Slf4j
 @RestController
 public class CategoryController {
-    private static final Logger log = LoggerFactory.getLogger(CategoryController.class);
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CategoryService categoryService;
 
 
-    @RequestMapping("/category")
-    public ResponseEntity<List<Category>> getCategory() {
-        List<Category> categories = this.categoryRepository.findAll();
+    @RequestMapping(value ="/category")
+    public ResponseEntity<List<Category>> findAll() {
+        List<Category> categories = this.categoryService.findAll();
         return new ResponseEntity<>(categories, HttpStatus.OK); // 200
     }
 
-    @RequestMapping("/category/{id}")
-    public ResponseEntity<Category> getTag(@PathVariable("id") int id) {
-        Category category = this.categoryRepository.getOne(id);
+    @RequestMapping(value = "/category/{id}")
+    public ResponseEntity<Category> findById(@PathVariable("id") int id) {
+        Category category = this.categoryService.findById(id);
         log.info("Tag found with id: {}, {}", id, category);
         return new ResponseEntity<>(category, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/category", method = RequestMethod.POST)
-    public ResponseEntity<Category> createTag(@RequestBody Category category) {
-        log.info("Createcategory() -> {}", category);
-        Category saved = this.categoryRepository.save(category);
-        return new ResponseEntity<>(saved, HttpStatus.CREATED);
+    public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category, BindingResult result) {
+        if(result.hasErrors()){
+            throw new SuchanaDataException("Invalid Payload", result.getFieldErrors());
+        }
+        return new ResponseEntity<>(this.categoryService.createCategory(category), HttpStatus.CREATED);
+
     }
 
     @RequestMapping(value = "/category/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<HttpStatus> deleteCategory(@PathVariable("id") int id) {
         log.info("DeleteCategory() -> {}", id);
-        boolean exists = this.categoryRepository.existsById(id);
-        if (!exists) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        this.categoryRepository.deleteById(id);
+        this.categoryService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
 
 
     }
 
     @RequestMapping(value = "/category/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Category> updateTag(@RequestBody Category category, @PathVariable("id") int id) {
+    public ResponseEntity<Category> updateCategory(@RequestBody Category category, @PathVariable("id") int id) {
         log.info("updatecategory()-> {}", id);
-        boolean exists = this.categoryRepository.existsById(id);
-        if (!exists) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        this.categoryRepository.save(category);
-        return new ResponseEntity<>(HttpStatus.OK);
+        category.setId(id);
+        return new ResponseEntity<>(this.categoryService.update(category),HttpStatus.OK);
     }
 }
