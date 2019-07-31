@@ -16,4 +16,6 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
     List<Article> findAllByCategory(String category);
     @Query(value = "select * from article where id in (select article_id from article_tag where tag_id = (select tagId from tags where name = ?1))", nativeQuery = true)
     List<Article> findAllByTag(String tags);
+
+    Article findByTitle(String title);
 }

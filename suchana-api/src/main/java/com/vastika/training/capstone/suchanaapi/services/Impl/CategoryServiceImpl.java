@@ -15,6 +15,7 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
+
     @Override
     public List<Category> findAll() {
         return this.categoryRepository.findAll();
@@ -28,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Category update(Category category) {
         boolean exists = this.categoryRepository.existsById(category.getId());
-        if(!exists){
+        if (!exists) {
             throw new SuchanaApiException("No category found with id:" + category.getId(), 404);
         }
         return this.categoryRepository.save(category);
@@ -37,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void deleteById(int id) {
         boolean exists = this.categoryRepository.existsById(id);
-        if(!exists){
+        if (!exists) {
             throw new SuchanaApiException("No Category found with id:" + id, 404);
 
         }
@@ -47,6 +48,11 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category createCategory(Category category) {
+        // need to make sure there is no duplicate entry with same name
+        Category categoryInDb = this.categoryRepository.findByName(category.getName());
+        if (categoryInDb != null) {
+            throw new SuchanaApiException("Already exists category with name: " + category.getName(), 409);
+        }
         return this.categoryRepository.save(category);
     }
 }

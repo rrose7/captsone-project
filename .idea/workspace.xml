@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2c60662-c70f-4f9e-b807-f53de882f98f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/captsone-project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/AuthorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/controllers/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/exceptions/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/exceptions/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/ApiError.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/dtos/ApiError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/dtos/ErrorResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/models/Tags.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/AuthorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/TagsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/repositories/TagsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/AuthorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/AuthorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/TagsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/java/com/vastika/training/capstone/suchanaapi/services/Impl/TagsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suchana-api/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/suchana-api/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,7 +129,9 @@
       <workItem from="1564256318596" duration="33000" />
       <workItem from="1564256367684" duration="5488000" />
       <workItem from="1564337384713" duration="3252000" />
-      <workItem from="1564346626316" duration="17870000" />
+      <workItem from="1564346626316" duration="18097000" />
+      <workItem from="1564454308993" duration="800000" />
+      <workItem from="1564588405976" duration="5142000" />
     </task>
     <servers />
   </component>
@@ -143,7 +143,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -29,10 +29,13 @@ public class TagsServiceImpl implements TagsService {
 
     @Override
     public Tags CreateTag(Tags tags) {
-        Tags created = this.tagsRepository.save(tags);
-        log.info("Tag Created with Id",tags.getTagId());
-        return created;
+        Tags tagInDb = this.tagsRepository.findByName(tags.getName());
+        if (tagInDb != null) {
+            throw new SuchanaApiException("Tag already exists with name: " + tags.getName(), 409);
+        }
+        return this.tagsRepository.save(tags);
     }
+
 
     @Override
     public void deleteTag(int id) {

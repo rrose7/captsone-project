@@ -1,5 +1,6 @@
 package com.vastika.training.capstone.suchanaapi.services.Impl;
 
+import com.vastika.training.capstone.suchanaapi.exceptions.SuchanaApiException;
 import com.vastika.training.capstone.suchanaapi.models.Article;
 import com.vastika.training.capstone.suchanaapi.repositories.ArticleRepository;
 import com.vastika.training.capstone.suchanaapi.services.ArticleService;
@@ -17,6 +18,11 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article save(Article article) {
         log.info("save()");
+        Article articleInDb = this.articleRepository.findByTitle(article.getTitle());
+        if (articleInDb!=null){
+            throw new SuchanaApiException("Article Exists with title:" + article.getTitle(), 409);
+
+        }
         return articleRepository.save(article);
     }
 
