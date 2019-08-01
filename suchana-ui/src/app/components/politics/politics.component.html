@@ -1,1 +1,10 @@
-<p>politics works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" *ngFor="let politics of politicsNew">
+      <h3>{{politics.title}}</h3>
+      <p>By {{politics.author.firstName}} {{politics.author.lastName}} | {{politics.category.name}}</p>
+      <p>{{politics.content}}</p>
+    </div>
+  </div>
+</div>
+

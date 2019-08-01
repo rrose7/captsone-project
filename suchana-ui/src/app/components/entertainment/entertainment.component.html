@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" *ngFor="let entertainment of entertainmentNews">
+      <h3>{{entertainment.title}}</h3>
+      <p>By {{entertainment.author.firstName}} {{entertainment.author.lastName}} | {{entertainment.category.name}}</p>
+      <p>{{entertainment.content}}</p>
+    </div>
+  </div>
+</div>
+
+

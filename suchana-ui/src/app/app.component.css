@@ -1,3 +1,2 @@
-p {
-  background-color: yellow;
-}
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
