@@ -15,17 +15,12 @@ export class NewsService {
     return this.http.get(this.API_BASE_URL + "/articles");
   }
 
-  getSportsNew(): Observable<any> {
-    return this.http.get(this.API_BASE_URL + "/articles?category=sports");
+  getNews(category?: string): Observable<any> {
+    let url = this.API_BASE_URL + "/articles";
+    if (category) {
+      url = url + "?category=" + category;
+    }
+    return this.http.get(url);
+
   }
-
-  getpoliticsNew(): Observable<any> {
-    return this.http.get(this.API_BASE_URL + "/articles?category=politics");
-  }
-
-  getEntertainmentNew(): Observable<any> {
-    return this.http.get(this.API_BASE_URL + "/articles?category=entertainment");
-  }
-
-
 }

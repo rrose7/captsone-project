@@ -4,6 +4,7 @@ import {NewsComponent} from "./components/news/news.component";
 import {SportsComponent} from "./components/sports/sports.component";
 import {PoliticsComponent} from "./components/politics/politics.component";
 import {EntertainmentComponent} from "./components/entertainment/entertainment.component";
+import {CategoryComponent} from "./components/category/category.component";
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "entertainment",
     component:EntertainmentComponent
+  },
+  {
+    path: "category",
+    component:CategoryComponent
   }
 ];
 
