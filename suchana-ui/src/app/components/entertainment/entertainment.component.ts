@@ -11,7 +11,7 @@ export class EntertainmentComponent implements OnInit {
   constructor(private newsService:NewsService) { }
 
   ngOnInit() {
-    this.newsService.getNews('entertainment').subscribe((data)=>this.entertainmentNews=data);
+    this.newsService.getNews('Entertainment').subscribe((data)=>this.entertainmentNews=data);
   }
 
 }

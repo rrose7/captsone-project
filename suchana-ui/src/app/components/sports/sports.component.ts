@@ -13,7 +13,7 @@ export class SportsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.newsService.getNews('sports').subscribe((data)=> this.sportsNews = data);
+    this.newsService.getNews('Sports').subscribe((data)=> this.sportsNews = data);
   }
 
 }

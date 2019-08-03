@@ -4,7 +4,8 @@ import {NewsComponent} from "./components/news/news.component";
 import {SportsComponent} from "./components/sports/sports.component";
 import {PoliticsComponent} from "./components/politics/politics.component";
 import {EntertainmentComponent} from "./components/entertainment/entertainment.component";
-import {CategoryComponent} from "./components/category/category.component";
+
+
 
 
 const routes: Routes = [
@@ -13,21 +14,24 @@ const routes: Routes = [
     component:NewsComponent
   },
   {
-    path: "sports",
+    path: "Sports",
     component:SportsComponent
   },
   {
-    path: "politics",
+    path: "Politics",
     component:PoliticsComponent
   },
   {
-    path: "entertainment",
+    path: "Entertainment",
     component:EntertainmentComponent
   },
-  {
-    path: "category",
-    component:CategoryComponent
+
+  {    path: '',
+    redirectTo: 'news',
+    pathMatch: 'full'
   }
+
+
 ];
 
 @NgModule({

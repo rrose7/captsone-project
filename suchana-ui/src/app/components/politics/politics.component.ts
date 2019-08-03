@@ -12,7 +12,7 @@ export class PoliticsComponent implements OnInit{
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.newsService.getNews('politics').subscribe((data)=> this.politicsNew = data);
+    this.newsService.getNews('Politics').subscribe((data)=> this.politicsNew = data);
   }
 
 }

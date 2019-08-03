@@ -8,19 +8,15 @@ import {Observable} from "rxjs";
 export class NewsService {
   API_BASE_URL = "http://localhost:8080";
 
-  constructor(private http: HttpClient) {
-  }
-
-  getAllNews(): Observable<any> {
-    return this.http.get(this.API_BASE_URL + "/articles");
-  }
+  // inject httpClient into service
+  constructor(private http: HttpClient) { }
 
   getNews(category?: string): Observable<any> {
     let url = this.API_BASE_URL + "/articles";
+
     if (category) {
       url = url + "?category=" + category;
     }
     return this.http.get(url);
-
   }
 }

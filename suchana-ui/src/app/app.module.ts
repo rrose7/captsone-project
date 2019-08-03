@@ -8,7 +8,11 @@ import { SportsComponent } from './components/sports/sports.component';
 import { PoliticsComponent } from './components/politics/politics.component';
 import {HttpClientModule} from "@angular/common/http";
 import { EntertainmentComponent } from './components/entertainment/entertainment.component';
-import { CategoryComponent } from './components/category/category.component';
+import {AdminModule} from "./components/admin/admin.module";
+import { HeaderComponent } from './components/header/header.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,12 +21,17 @@ import { CategoryComponent } from './components/category/category.component';
     SportsComponent,
     PoliticsComponent,
     EntertainmentComponent,
-    CategoryComponent
+    HeaderComponent
+
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
