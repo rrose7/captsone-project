@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {AdminComponent} from "./admin.component";
 import {CategoriesComponent} from "./categories/categories.component";
+import {AuthorComponent} from "./author/author.component";
 
 const routes: Routes=[
   {
@@ -11,6 +12,10 @@ const routes: Routes=[
       {
         path:'categories',
         component:CategoriesComponent
+      },
+      {
+        path:'authors',
+        component:AuthorComponent
       }
     ]
   }

@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
     PoliticsComponent,
     EntertainmentComponent,
     HeaderComponent
+
 
 
 

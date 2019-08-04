@@ -4,11 +4,12 @@ import {FormsModule} from "@angular/forms";
 import {AdminRoutingModule} from "./admin-routing.module";
 import {CategoriesComponent} from "./categories/categories.component";
 import {AdminComponent} from "./admin.component";
+import { AuthorComponent } from './author/author.component';
 
 
 
 @NgModule({
-  declarations: [CategoriesComponent, AdminComponent],
+  declarations: [CategoriesComponent, AdminComponent, AuthorComponent],
   imports: [
     CommonModule,
     FormsModule,
