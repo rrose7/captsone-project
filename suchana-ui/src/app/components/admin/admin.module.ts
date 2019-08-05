@@ -2,18 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from "@angular/forms";
 import {AdminRoutingModule} from "./admin-routing.module";
-import {CategoriesComponent} from "./categories/categories.component";
 import {AdminComponent} from "./admin.component";
-import { AuthorComponent } from './author/author.component';
+import { AuthorComponent } from './authors/author/author.component';
+import { EditAuthorComponent } from './authors/edit-author/edit-author.component';
+import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import { AddAuthorComponent } from './authors/add-author/add-author.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 
 @NgModule({
-  declarations: [CategoriesComponent, AdminComponent, AuthorComponent],
+  declarations: [AdminComponent, AuthorComponent, EditAuthorComponent, AddAuthorComponent, CategoriesComponent],
   imports: [
     CommonModule,
     FormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    NgMultiSelectDropDownModule.forRoot()
   ]
 })
 export class AdminModule { }

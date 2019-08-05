@@ -1,29 +1,31 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {Constants} from "../models/Constants";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorService {
-  API_BASE_URL = "http://localhost:8080";
-
+  API_URL = Constants.API_BASE_URL +"/authors"
   constructor(private http: HttpClient) {
   }
 
   getAuthor(): Observable<any> {
-    return this.http.get(this.API_BASE_URL + "/authors");
+    return this.http.get(this.API_URL);
   }
-  updateAuthor(authors):Observable<any>{
-    return this.http.put(this.API_BASE_URL + "/authors/" + authors.id, authors);
+  getAuthorById(authorId): Observable<any> {
+    return this.http.get(this.API_URL + "/" + authorId);
   }
-  deleteAuthor(id):Observable<any>{
-    return this.http.delete(this.API_BASE_URL+"/authors/"+ id);
-
+  updateAuthor(author):Observable<any>{
+    return this.http.put(this.API_URL + "/" + author.id, author);
   }
-  createAuthor(authors):Observable<any>{
-    return this.http.post(this.API_BASE_URL+"/authors/", authors);
+  deleteAuthor(authorId): Observable<any> {
+    return this.http.delete(this.API_URL + "/" + authorId);
+  }
+  createAuthor(author):Observable<any>{
+    return this.http.post(this.API_URL, author);
   }
 
 }

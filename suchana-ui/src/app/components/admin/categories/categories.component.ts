@@ -18,7 +18,6 @@ export class CategoriesComponent implements OnInit {
   constructor(private categoryService: CategoriesService) { }
   ngOnInit() {
     this.getCategories();
-
   }
   getCategories(){
     this.categoryService.getCategories().subscribe((data)=>this.categories=data);
@@ -31,21 +30,26 @@ export class CategoriesComponent implements OnInit {
   submitCategoriesEdit(categories){
     this.editingCategories= false;
     this.categoryService.updateCategories(categories).subscribe((data)=>this.categories= data);
+    this.cancel();
   }
   deleteCategories(categories){
-    this.categoryService.deleteCategories(categories.id).subscribe((data)=>this.categories=data);
+    this.categoryService.deleteCategories(categories.id).subscribe(data=> {
+      this.categories=data;
+      this.getCategories();
+    });
+
   }
   createCategoriesForm(){
-  this.creatingCategories = true;
-  this.categoriesToCreate =new categories();
+    this.creatingCategories = true;
+    this.categoriesToCreate =new categories();
   }
   createCategories(categories){
-  this.categoryService.createCategories(categories).subscribe((data)=>this.categories.push(data));
-
+    this.categoryService.createCategories(categories).subscribe((data)=>this.categories.push(data));
+this.cancel();
 
   }
   cancel(){
-  this.editingCategories =false;
-  this.creatingCategories = false;
+    this.editingCategories =false;
+    this.creatingCategories = false;
   }
 }

@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { EntertainmentComponent } from './components/entertainment/entertainment.component';
 import {AdminModule} from "./components/admin/admin.module";
 import { HeaderComponent } from './components/header/header.component';
+import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 
 
 
@@ -32,7 +33,8 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
+    NgMultiSelectDropDownModule.forRoot()
 
   ],
   providers: [],
