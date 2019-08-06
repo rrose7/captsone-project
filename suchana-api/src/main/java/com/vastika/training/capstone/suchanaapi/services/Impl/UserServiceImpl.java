@@ -1,7 +1,7 @@
 package com.vastika.training.capstone.suchanaapi.services.Impl;
 
 import com.vastika.training.capstone.suchanaapi.exceptions.SuchanaApiException;
-import com.vastika.training.capstone.suchanaapi.models.Author;
+import com.vastika.training.capstone.suchanaapi.models.User;
 import com.vastika.training.capstone.suchanaapi.models.Category;
 import com.vastika.training.capstone.suchanaapi.repositories.AuthorRepository;
 import com.vastika.training.capstone.suchanaapi.repositories.CategoryRepository;
@@ -24,55 +24,55 @@ public class AuthorServiceImpl implements AuthorService {
     private CategoryRepository categoryRepository;
 
     @Override
-    public List<Author> findAll() {
+    public List<User> findAll() {
         return this.authorRepository.findAll();
     }
 
     @Override
-    public Author findById(int id) {
+    public User findById(int id) {
         return this.authorRepository.getOne(id);
     }
 
     @Override
-    public Author update(Author author) {
-        boolean exists = this.authorRepository.existsById(author.getId());
+    public User update(User user) {
+        boolean exists = this.authorRepository.existsById(user.getId());
         if (!exists) {
-            throw new SuchanaApiException("No Author found with id:" + author.getId(), 404);
+            throw new SuchanaApiException("No Author found with id:" + user.getId(), 404);
         }
-        if (author.getCategories() == null) {
-            author.setCategories(new HashSet<>());
+        if (user.getCategories() == null) {
+            user.setCategories(new HashSet<>());
         }
-        if (author.getArticles() == null) {
-            author.setArticles(new ArrayList<>());
+        if (user.getArticles() == null) {
+            user.setArticles(new ArrayList<>());
         }
-        return this.authorRepository.save(author);
+        return this.authorRepository.save(user);
 
     }
     @Override
-    public Author createAuthor(Author author) {
-        author.setArticles(new ArrayList<>());
+    public User createAuthor(User user) {
+        user.setArticles(new ArrayList<>());
 
         // if no categories are supplied, then set empty categories
-        if (author.getCategories() == null) {
-            author.setCategories(new HashSet<>());
+        if (user.getCategories() == null) {
+            user.setCategories(new HashSet<>());
         } else {
             // need to make sure that category exists
             List<Category> existingCategories = this.categoryRepository.findAll();
 
-            for (Category upcoming: author.getCategories()) {
+            for (Category upcoming: user.getCategories()) {
                 if (!existingCategories.contains(upcoming)) {
                     throw new SuchanaApiException("No category exists with id: " + upcoming.getId() + ", name: " + upcoming.getName(), 400);
                 }
             }
         }
 
-        Author authorInDb = this.authorRepository.findByUsername(author.getUsername());
+        User userInDb = this.authorRepository.findByUsername(user.getUsername());
 
-        if (authorInDb != null) {
-            throw new SuchanaApiException("Author exists with username: " + author.getUsername(), 409);
+        if (userInDb != null) {
+            throw new SuchanaApiException("Author exists with username: " + user.getUsername(), 409);
         }
 
-        Author created = this.authorRepository.save(author);
+        User created = this.authorRepository.save(user);
 
         log.info("Author created with id : {}", created.getId());
 

@@ -11,6 +11,8 @@ import { EntertainmentComponent } from './components/entertainment/entertainment
 import {AdminModule} from "./components/admin/admin.module";
 import { HeaderComponent } from './components/header/header.component';
 import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
+import {AuthModule} from "./components/auth/auth.module";
+
 
 
 
@@ -28,13 +30,16 @@ import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 
 
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AdminModule,
+    AuthModule,
     NgMultiSelectDropDownModule.forRoot()
+
 
   ],
   providers: [],

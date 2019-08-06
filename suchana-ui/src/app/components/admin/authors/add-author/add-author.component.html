@@ -7,28 +7,28 @@
       <div class="form-group row">
         <label class="control-label col-sm-2">Id:</label>
         <div class="col-sm-10">
-          <input readonly type="text" class="form-control" value="{{author.id}}">
+          <input readonly type="text" class="form-control" value="{{user.id}}">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="control-label col-sm-2">First Name:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="firstName" [(ngModel)]="author.firstName">
+          <input type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="control-label col-sm-2">LastName:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="lastName" [(ngModel)]="author.lastName">
+          <input type="text" class="form-control" name="lastName" [(ngModel)]="user.lastName">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="control-label col-sm-2">Username:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="username" [(ngModel)]="author.username">
+          <input type="text" class="form-control" name="username" [(ngModel)]="user.username">
         </div>
       </div>
 
@@ -37,7 +37,7 @@
         <ng-multiselect-dropdown class="col-sm-10"
                                  [placeholder]="'Select Categories'"
                                  [data]="categories"
-                                 [(ngModel)]="author.categories"
+                                 [(ngModel)]="user.categories"
                                  [settings]="dropdownSettings"
         >
         </ng-multiselect-dropdown>

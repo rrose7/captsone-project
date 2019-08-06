@@ -44,7 +44,7 @@ export class AuthorComponent implements OnInit {
 
   }
   cancel(){
-    this.author = null;
+    this.addauthor = null;
   }
 
   createAuthorForm(){

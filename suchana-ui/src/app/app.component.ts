@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CategoriesService} from "./services/categories.service";
+
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,17 @@ import {CategoriesService} from "./services/categories.service";
 export class AppComponent implements OnInit{
   title = 'Suchana';
 
-  isLoggedIn = true;
+  isLoggedIn = false;
 
 
   constructor() {
   }
-  ngOnInit(){}
+  ngOnInit(){
+      // TODO change this to obserable
+      if (localStorage.getItem('loggedInUser') != null) {
+        this.isLoggedIn = true;
+      }
+  }
 
 }
 
