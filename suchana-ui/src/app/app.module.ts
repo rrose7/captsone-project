@@ -1,34 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NewsComponent } from './components/news/news.component';
-import { SportsComponent } from './components/sports/sports.component';
-import { PoliticsComponent } from './components/politics/politics.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
-import { EntertainmentComponent } from './components/entertainment/entertainment.component';
 import {AdminModule} from "./components/admin/admin.module";
-import { HeaderComponent } from './components/header/header.component';
 import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 import {AuthModule} from "./components/auth/auth.module";
-
-
-
-
-
+import {UnauthorizedComponent} from "./components/unauthorized/unauthorized.component";
+import {ViewerModule} from "./components/viewer/viewer.module";
+import {AuthorssModule} from "./components/authorss/authorss.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsComponent,
-    SportsComponent,
-    PoliticsComponent,
-    EntertainmentComponent,
-    HeaderComponent
-
-
-
+    UnauthorizedComponent
 
 
   ],
@@ -38,9 +24,9 @@ import {AuthModule} from "./components/auth/auth.module";
     HttpClientModule,
     AdminModule,
     AuthModule,
+    ViewerModule,
+    AuthorssModule,
     NgMultiSelectDropDownModule.forRoot()
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
