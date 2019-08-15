@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable, ReplaySubject} from "rxjs";
 import {Constants} from "../models/Constants";
 import {LoginRequest} from "../models/LoginRequest";
@@ -11,11 +11,16 @@ import {LoginRequest} from "../models/LoginRequest";
 export class AuthService {
   private loggedInEvent = new ReplaySubject<any>();
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   login(user: LoginRequest): Observable<any> {
-    return this.http.post(Constants.API_BASE_URL + "/user/login", user);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+    const body = new HttpParams()
+      .set('username', user.username)
+      .set('password', user.password);
+    return this.http.post(Constants.API_BASE_URL + "/user/login", body.toString(), {headers});
   }
 
   loggedInUser() {
@@ -31,7 +36,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('loggedInUser');
-    this.loggedInEvent.next({type: 'error'})
+    this.loggedInEvent.next({type : 'error'});
   }
-
 }

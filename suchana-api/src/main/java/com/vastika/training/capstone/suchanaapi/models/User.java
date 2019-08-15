@@ -2,23 +2,25 @@ package com.vastika.training.capstone.suchanaapi.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.vastika.training.capstone.suchanaapi.models.types.RoleType;
 import lombok.Data;
-import lombok.NonNull;
 
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
 @Data
 @Entity
-@Table(name="author")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "articles"})
-public class Author {
+@Table(name="user")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "articles","password"})
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -37,11 +39,20 @@ public class Author {
     @Column(unique = true)
     private String username;
 
-    private LocalDate dateCreated;
+    @NotBlank
+    @Size(min=3, max = 500)
+    private String password;
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private RoleType role;
 
-    @OneToMany(mappedBy = "author")
+    private LocalDateTime dateCreated;
+
+    @OneToMany(mappedBy = "user")
     private List<Article> articles;
 
+    @Valid
+    @NotNull
     @ManyToMany
     @JoinTable(
             name = "author_category",

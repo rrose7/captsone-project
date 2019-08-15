@@ -1,53 +1,62 @@
 package com.vastika.training.capstone.suchanaapi.services.Impl;
 
 import com.vastika.training.capstone.suchanaapi.exceptions.SuchanaApiException;
-import com.vastika.training.capstone.suchanaapi.models.User;
 import com.vastika.training.capstone.suchanaapi.models.Category;
-import com.vastika.training.capstone.suchanaapi.repositories.AuthorRepository;
+import com.vastika.training.capstone.suchanaapi.models.User;
 import com.vastika.training.capstone.suchanaapi.repositories.CategoryRepository;
-import com.vastika.training.capstone.suchanaapi.services.AuthorService;
+import com.vastika.training.capstone.suchanaapi.repositories.UserRepository;
+import com.vastika.training.capstone.suchanaapi.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-
 @Slf4j
 @Service
-public class AuthorServiceImpl implements AuthorService {
+@Transactional
+public class UserServiceImpl implements UserService {
     @Autowired
-    private AuthorRepository authorRepository;
+    private UserRepository userRepository;
+
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
     @Override
     public List<User> findAll() {
-        return this.authorRepository.findAll();
+        return this.userRepository.findAll();
     }
 
     @Override
     public User findById(int id) {
-        return this.authorRepository.getOne(id);
+        return this.userRepository.getOne(id);
     }
 
     @Override
     public User update(User user) {
-        boolean exists = this.authorRepository.existsById(user.getId());
+        boolean exists = this.userRepository.existsById(user.getId());
         if (!exists) {
-            throw new SuchanaApiException("No Author found with id:" + user.getId(), 404);
+            throw new SuchanaApiException("No User found with id: " + user.getId(), 404);
         }
+
         if (user.getCategories() == null) {
             user.setCategories(new HashSet<>());
         }
+
         if (user.getArticles() == null) {
             user.setArticles(new ArrayList<>());
         }
-        return this.authorRepository.save(user);
 
+        return this.userRepository.save(user);
     }
+
     @Override
     public User createAuthor(User user) {
         user.setArticles(new ArrayList<>());
@@ -66,15 +75,15 @@ public class AuthorServiceImpl implements AuthorService {
             }
         }
 
-        User userInDb = this.authorRepository.findByUsername(user.getUsername());
+        User userInDb = this.userRepository.findByUsername(user.getUsername());
 
         if (userInDb != null) {
-            throw new SuchanaApiException("Author exists with username: " + user.getUsername(), 409);
+            throw new SuchanaApiException("User exists with username: " + user.getUsername(), 409);
         }
 
-        User created = this.authorRepository.save(user);
+        User created = this.userRepository.save(user);
 
-        log.info("Author created with id : {}", created.getId());
+        log.info("User created with id : {}", created.getId());
 
         return created;
     }

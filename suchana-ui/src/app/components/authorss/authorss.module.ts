@@ -4,12 +4,12 @@ import {AuthorssComponent} from "./authorss.component";
 import {ArticlesComponent} from "./articles/articles.component";
 import {AuthorssRoutingModule} from "./authorss-routing.module";
 import {FormsModule} from "@angular/forms";
-import {EditArticleComponent} from "./edit-article/edit-article.component";
+
 
 
 
 @NgModule({
-  declarations: [AuthorssComponent, ArticlesComponent, EditArticleComponent],
+  declarations: [AuthorssComponent, ArticlesComponent],
   imports: [
     CommonModule,
     FormsModule,

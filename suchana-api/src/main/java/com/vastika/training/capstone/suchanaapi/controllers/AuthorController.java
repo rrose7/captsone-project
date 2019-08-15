@@ -1,75 +1,95 @@
 package com.vastika.training.capstone.suchanaapi.controllers;
 
 
+import com.vastika.training.capstone.suchanaapi.exceptions.handler.SuchanaDataException;
 import com.vastika.training.capstone.suchanaapi.models.Article;
-import com.vastika.training.capstone.suchanaapi.models.Author;
+import com.vastika.training.capstone.suchanaapi.models.User;
+import com.vastika.training.capstone.suchanaapi.models.dtos.CreateUserRequest;
+import com.vastika.training.capstone.suchanaapi.models.types.RoleType;
 import com.vastika.training.capstone.suchanaapi.services.ArticleService;
-import com.vastika.training.capstone.suchanaapi.services.AuthorService;
+import com.vastika.training.capstone.suchanaapi.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
-
 
 @Slf4j
 @RestController
 public class AuthorController {
     @Autowired
-    private AuthorService authorService;
+    private UserService userService;
+
     @Autowired
     private ArticleService articleService;
 
-    @RequestMapping("/authors")
-    public ResponseEntity<List<Author>> findAll() {
-        return new ResponseEntity<>(this.authorService.findAll(), HttpStatus.OK);
-    }
-    @RequestMapping("/authors/{id}")
-    public ResponseEntity<Author> getAuthor(@PathVariable("id") int id) {
-        Author author = this.authorService.findById(id);
-        log.info("Author found with id: {}, {}",id, author);
-        return new ResponseEntity<>(author, HttpStatus.OK);
-    }
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
+    @RequestMapping("/authors")
+    public ResponseEntity<List<User>> findAll() {
+        return new ResponseEntity<>(this.userService.findAll(), HttpStatus.OK);
+    }
 
     @RequestMapping(value = "/authors/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Author> updateAuthor(@RequestBody Author author, @PathVariable("id") int id) {
+    public ResponseEntity<User> updateAuthor(@RequestBody User user, @PathVariable("id") int id) {
         log.info("updateAuthor() -> {}", id);
-        author.setId(id);
-        return new ResponseEntity<>(this.authorService.update(author), HttpStatus.OK);
+        user.setId(id);
+        return new ResponseEntity<>(this.userService.update(user), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/authors", method = RequestMethod.POST)
-    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
-        log.info("createAuthor() -> {}", author);
-        author.setDateCreated(LocalDate.now());
+    public ResponseEntity<User> createAuthor(@Valid @RequestBody CreateUserRequest user,
+                                             BindingResult result) {
+        log.info("createAuthor() -> {}", user);
+        if (result.hasErrors()) {
+            throw new SuchanaDataException("Invalid Payload!", result.getFieldErrors());
+        }
 
-        return new ResponseEntity<>(this.authorService.createAuthor(author), HttpStatus.CREATED);
+        User userToCreate = new User();
+        userToCreate.setArticles(null);
+        userToCreate.setFirstName(user.getFirstName());
+        userToCreate.setLastName(user.getLastName());
+        userToCreate.setUsername(user.getUsername());
+        userToCreate.setPassword(passwordEncoder.encode(user.getPassword()));
+        userToCreate.setDateCreated(LocalDateTime.now());
+        userToCreate.setRole(RoleType.ROLE_AUTHOR);
+        userToCreate.setCategories(user.getCategories());
+
+        return new ResponseEntity<>(this.userService.createAuthor(userToCreate), HttpStatus.CREATED);
     }
 
-    @PostMapping(value = "/authors/{id}/articles")
-    public ResponseEntity<Article> createArticle(@Valid @RequestBody Article article, BindingResult result,
-                                                 @PathVariable("id") int authorId){
+    // /api/v1/users/{id}/accounts
+    @PostMapping("/authors/{id}/articles")
+    public ResponseEntity<Article> createArticle(@Valid @RequestBody Article article,
+                                                 BindingResult result,
+                                                 @PathVariable("id") int authorId) {
         log.info("createArticle() -> authorId: {}", authorId);
-        article.setPublishDate(LocalDate.now());
-        Author author = this.authorService.findById(authorId);
-        article.setAuthor(author);
+
+        if (result.hasErrors()) {
+            throw new SuchanaDataException("Invalid Payload!", result.getFieldErrors());
+        }
+
+        article.setPublishDate(LocalDateTime.now());
+
+        User user = this.userService.findById(authorId);
+
+        article.setUser(user);
         Article saved = this.articleService.save(article);
-        log.info("Article saved -> id:{}", saved.getId());
+
+        log.info("Article saved -> id: {}", saved.getId());
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
-
     }
+
     @GetMapping("/authors/{id}/articles")
-    public ResponseEntity<List<Article>>getArticleByAuthor(@PathVariable("id") int authorId){
-        return new ResponseEntity<>(this.articleService.findByAuthorId(authorId), HttpStatus.OK);
+    public ResponseEntity<List<Article>> getArticlesByAuthor(@PathVariable("id") int authorId) {
+        return new ResponseEntity<>(this.articleService.findByAuthorId(authorId),
+                HttpStatus.OK);
     }
-
-
-
 }
-

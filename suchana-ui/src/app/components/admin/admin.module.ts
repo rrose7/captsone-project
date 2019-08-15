@@ -8,6 +8,8 @@ import { EditAuthorComponent } from './authors/edit-author/edit-author.component
 import {NgMultiSelectDropDownModule} from "ng-multiselect-dropdown";
 import { AddAuthorComponent } from './authors/add-author/add-author.component';
 import { CategoriesComponent } from './categories/categories.component';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {ApiService} from "../interceptors/api.service";
 
 
 
@@ -18,6 +20,9 @@ import { CategoriesComponent } from './categories/categories.component';
     FormsModule,
     AdminRoutingModule,
     NgMultiSelectDropDownModule.forRoot()
-  ]
+  ],
+  providers:[{
+    provide: HTTP_INTERCEPTORS, useClass: ApiService, multi: true
+  }]
 })
 export class AdminModule { }

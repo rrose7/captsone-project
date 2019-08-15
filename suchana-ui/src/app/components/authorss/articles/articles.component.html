@@ -29,12 +29,11 @@
         <td>{{article.publishDate}}</td>
         <td>{{article.noOfViews}}</td>
         <td>
-          <button class="btn btn-primary mr-3" (click)="editArticles(article)">Edit</button>
+          <button class="btn btn-primary mr-3" (click)="editArticles()">Edit</button>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-  <app-edit-article *ngIf="article" [article]="article"
-                    (updateArticle)="submitArticleEdit()" (cancelEvent)="cancel()"></app-edit-article>
+
 </div>

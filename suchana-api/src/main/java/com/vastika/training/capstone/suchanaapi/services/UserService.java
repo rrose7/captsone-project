@@ -4,7 +4,7 @@ import com.vastika.training.capstone.suchanaapi.models.User;
 
 import java.util.List;
 
-public interface AuthorService {
+public interface UserService {
     List<User> findAll();
     User findById(int id);
     User update(User user);

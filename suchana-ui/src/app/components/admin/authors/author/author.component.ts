@@ -47,8 +47,7 @@ export class AuthorComponent implements OnInit {
     this.addauthor = null;
   }
 
-  createAuthorForm(){
-    this.addauthor = new Author();
+  createAuthorForm(){;
 
 
   }

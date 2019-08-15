@@ -6,8 +6,10 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
@@ -24,7 +26,7 @@ public class Article {
     @Size(min = 10, max = 1000)
     @NotBlank
     private String content;
-    private LocalDate publishDate;
+    private LocalDateTime publishDate;
     @Min(0)
     private long noOfViews;
 
@@ -39,10 +41,11 @@ public class Article {
     private Set<Tags> tags;
 
     @Valid
+    @NotNull
     @OneToOne
     private Category category;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
-    private Author author;
+    private User user;
 }

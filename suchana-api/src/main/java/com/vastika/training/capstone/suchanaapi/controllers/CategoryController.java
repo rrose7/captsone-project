@@ -20,20 +20,20 @@ public class CategoryController {
     private CategoryService categoryService;
 
 
-    @RequestMapping(value ="/category")
+    @RequestMapping(value ="/categories")
     public ResponseEntity<List<Category>> findAll() {
         List<Category> categories = this.categoryService.findAll();
         return new ResponseEntity<>(categories, HttpStatus.OK); // 200
     }
 
-    @RequestMapping(value = "/category/{id}")
+    @RequestMapping(value = "/categories/{id}")
     public ResponseEntity<Category> findById(@PathVariable("id") int id) {
         Category category = this.categoryService.findById(id);
         log.info("Tag found with id: {}, {}", id, category);
         return new ResponseEntity<>(category, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/category", method = RequestMethod.POST)
+    @RequestMapping(value = "/categories", method = RequestMethod.POST)
     public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category, BindingResult result) {
         if(result.hasErrors()){
             throw new SuchanaDataException("Invalid Payload", result.getFieldErrors());
@@ -42,7 +42,7 @@ public class CategoryController {
 
     }
 
-    @RequestMapping(value = "/category/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<HttpStatus> deleteCategory(@PathVariable("id") int id) {
         log.info("DeleteCategory() -> {}", id);
         this.categoryService.deleteById(id);
@@ -51,7 +51,7 @@ public class CategoryController {
 
     }
 
-    @RequestMapping(value = "/category/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/categories/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Category> updateCategory(@RequestBody Category category, @PathVariable("id") int id) {
         log.info("updatecategory()-> {}", id);
         category.setId(id);

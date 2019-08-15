@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AuthorComponent} from "../admin/authors/author/author.component";
 import {AuthorCanActivateGuard} from "../../services/author-can-activate.guard";
 import {ArticlesComponent} from "./articles/articles.component";
 import {AuthorssComponent} from "./authorss.component";

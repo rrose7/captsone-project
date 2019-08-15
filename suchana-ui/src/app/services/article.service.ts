@@ -14,9 +14,4 @@ export class ArticleService {
     return this.http.get(Constants.API_BASE_URL + "/authors/" + id + "/articles");
   }
 
-  updateArticle(article):Observable<any> {
-    return this.http.put(Constants.API_BASE_URL +"/" + article.id, article);
-
-
-  }
 }

@@ -8,7 +8,7 @@ import {Constants} from "../models/Constants";
   providedIn: 'root'
 })
 export class AuthorService {
-  API_URL = Constants.API_BASE_URL +"/authors"
+  API_URL = Constants.API_BASE_URL +"/authors";
   constructor(private http: HttpClient) {
   }
 

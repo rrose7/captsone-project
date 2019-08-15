@@ -1,3 +1,3 @@
 export const Constants = {
-  API_BASE_URL: "http://localhost:8080"
+  API_BASE_URL: "http://18.222.129.78:8080"
 }

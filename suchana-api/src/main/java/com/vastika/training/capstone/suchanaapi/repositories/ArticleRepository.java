@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Integer> {
-    @Query("from Article a where a.author.id=?1")
+    @Query("from Article a where a.user.id=?1")
     List<Article> findAllByAuthor(Integer authorId);
     @Query("from Article a where a.category.name=?1")
     List<Article> findAllByCategory(String category);
